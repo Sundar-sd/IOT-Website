@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="en" class="dark">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>HariChandra - IoT & Robotics</title>
+    <style>
+      body {
+        margin: 0;
+        background-color: #0f172a; /* Fallback for dark mode load */
+      }
+    </style>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+    <script>
+      // Prevent flash of incorrect theme
+      if (localStorage.getItem('theme') === 'light' || (!('theme' in localStorage) && !window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+        document.documentElement.classList.remove('dark')
+        document.body.style.backgroundColor = '#f8fafc'
+      }
+    </script>
+  </body>
+</html>
+
