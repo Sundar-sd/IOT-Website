@@ -100,3 +100,15 @@ body {
   animation: pulse-scale 10s ease-in-out infinite;
   will-change: transform, opacity;
 }
+
+/* Hide Spline Watermark Aggressively */
+#logo, 
+a[href*="spline.design"], 
+a[href*="spline"], 
+.spline-watermark,
+canvas + div:not([class]),
+canvas + a {
+  display: none !important;
+  opacity: 0 !important;
+  visibility: hidden !important;
+}

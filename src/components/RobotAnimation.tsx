@@ -183,10 +183,14 @@ export const RobotAnimation: React.FC = () => {
                 </motion.div>
               </div>
             ) : (
-              <Spline 
-                scene="https://prod.spline.design/PyzDhpQ9E5f1E3MT/scene.splinecode"
-                className="w-full h-full object-contain mix-blend-lighten"
-              />
+              <div className="w-full h-full relative overflow-hidden flex items-center justify-center">
+                <div className="absolute inset-[-10%] w-[120%] h-[120%] pointer-events-none">
+                  <Spline 
+                    scene="https://prod.spline.design/PyzDhpQ9E5f1E3MT/scene.splinecode"
+                    className="w-full h-full object-contain mix-blend-lighten pointer-events-auto"
+                  />
+                </div>
+              </div>
             )}
             {/* Sci-Fi Scanline Sweep passing over the 3D model */}
             <motion.div
