@@ -205,11 +205,11 @@ export const AuthModals: FC = () => {
             {/* Background elements */}
             <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-blue-500/10 via-slate-900/0 to-slate-900/0 pointer-events-none" />
             
-            <div className="w-full max-w-lg h-full flex flex-col items-center justify-center relative">
-              <div className="absolute inset-0 z-0 flex items-center justify-center scale-75 md:scale-100">
+            <div className="w-full max-w-lg flex flex-col items-center justify-center relative">
+              <div className="w-full flex items-center justify-center scale-75 md:scale-90 z-0">
                 <RobotAnimation />
               </div>
-              <div className="mt-auto relative z-10 text-center bg-white/40 dark:bg-slate-950/60 backdrop-blur-xl p-6 md:p-8 rounded-3xl border border-white/40 dark:border-slate-700/50 w-full shadow-2xl">
+              <div className="relative z-10 text-center bg-white/40 dark:bg-slate-950/60 backdrop-blur-xl p-6 md:p-8 rounded-3xl border border-white/40 dark:border-slate-700/50 w-full shadow-2xl -mt-12 md:-mt-16">
                 <div className="inline-block px-4 py-1.5 bg-blue-100 dark:bg-blue-900/50 text-blue-700 dark:text-cyan-400 rounded-full text-[10px] md:text-xs font-black tracking-widest uppercase mb-3 md:mb-4 shadow-inner">
                   Welcome to the Future
                 </div>
