@@ -14,13 +14,13 @@ export const RobotAnimation: React.FC = () => {
   // Advanced Multi-Layer Parallax for the environment
   const bgTranslateX = useTransform(smoothX, [-1, 1], [-10, 10]);
   const bgTranslateY = useTransform(smoothY, [-1, 1], [-10, 10]);
-  
+
   const midTranslateX = useTransform(smoothX, [-1, 1], [-20, 20]);
   const midTranslateY = useTransform(smoothY, [-1, 1], [-15, 15]);
-  
+
   const fgTranslateX = useTransform(smoothX, [-1, 1], [-40, 40]);
   const fgTranslateY = useTransform(smoothY, [-1, 1], [-25, 25]);
-  
+
   // Exaggerated transform for the glowing eyes
   const eyeX = useTransform(smoothX, [-1, 1], [-15, 15]);
   const eyeY = useTransform(smoothY, [-1, 1], [-15, 15]);
@@ -40,7 +40,7 @@ export const RobotAnimation: React.FC = () => {
     <div className="relative w-full h-full min-h-[500px] flex flex-col items-center justify-center select-none overflow-visible perspective-1000">
 
       {/* 1. Deep Background - Pulsating Nebulas */}
-      <motion.div 
+      <motion.div
         style={{ x: bgTranslateX, y: bgTranslateY }}
         className="absolute inset-0 flex items-center justify-center pointer-events-none"
       >
@@ -59,7 +59,7 @@ export const RobotAnimation: React.FC = () => {
       </motion.div>
 
       {/* 2. Middle Layer - Holographic 3D Gyroscope Rings */}
-      <motion.div 
+      <motion.div
         style={{ x: bgTranslateX, y: bgTranslateY, transformStyle: 'preserve-3d' }}
         className="absolute inset-0 flex items-center justify-center pointer-events-none z-0"
       >
@@ -86,7 +86,7 @@ export const RobotAnimation: React.FC = () => {
       {/* 3. High-Tech Floating HUD Cards (Glassmorphism) */}
       <motion.div style={{ x: fgTranslateX, y: fgTranslateY }} className="absolute inset-0 z-30 pointer-events-none">
         {/* Left HUD Component */}
-        <motion.div 
+        <motion.div
           animate={{ y: [-5, 5, -5] }} transition={{ repeat: Infinity, duration: 4, ease: 'easeInOut' }}
           className="absolute top-[20%] left-[5%] lg:left-[10%] bg-slate-900/70 backdrop-blur-md border border-purple-500/40 p-3 rounded-xl shadow-[0_0_25px_rgba(168,85,247,0.2)] flex flex-col gap-1.5"
         >
@@ -101,13 +101,13 @@ export const RobotAnimation: React.FC = () => {
         </motion.div>
 
         {/* Right HUD Component */}
-        <motion.div 
+        <motion.div
           animate={{ y: [5, -5, 5] }} transition={{ repeat: Infinity, duration: 5, ease: 'easeInOut' }}
           className="absolute bottom-[25%] right-[5%] lg:right-[10%] bg-slate-900/70 backdrop-blur-md border border-blue-500/40 p-3 rounded-xl shadow-[0_0_25px_rgba(59,130,246,0.2)] flex flex-col gap-1.5"
         >
           <div className="text-xs font-bold text-blue-300 tracking-wider">NEURAL LINK</div>
           <div className="flex items-end gap-1.5 mt-1 h-6">
-            {[1,2,3,4,5].map(i => (
+            {[1, 2, 3, 4, 5].map(i => (
               <motion.div key={i} animate={{ height: [4, Math.random() * 20 + 4, 4] }} transition={{ repeat: Infinity, duration: Math.random() * 0.5 + 0.5 }} className="w-1.5 bg-blue-400 rounded-t-sm shadow-[0_0_8px_rgba(96,165,250,0.8)]" />
             ))}
           </div>
@@ -174,7 +174,7 @@ export const RobotAnimation: React.FC = () => {
                   className="w-full h-full object-contain drop-shadow-[0_0_35px_rgba(34,211,238,0.4)] relative z-20 scale-[1.15]"
                 />
                 {/* Glowing Eyes that track cursor */}
-                <motion.div 
+                <motion.div
                   style={{ x: eyeX, y: eyeY }}
                   className="absolute top-[38%] left-1/2 -translate-x-1/2 w-12 md:w-16 h-4 z-30 flex justify-between pointer-events-none"
                 >
@@ -185,7 +185,7 @@ export const RobotAnimation: React.FC = () => {
             ) : (
               <div className="w-full h-full relative overflow-hidden flex items-center justify-center">
                 <div className="absolute inset-[-10%] w-[120%] h-[120%] pointer-events-none">
-                  <Spline 
+                  <Spline
                     scene="https://prod.spline.design/PyzDhpQ9E5f1E3MT/scene.splinecode"
                     className="w-full h-full object-contain mix-blend-lighten pointer-events-auto"
                   />
@@ -203,13 +203,13 @@ export const RobotAnimation: React.FC = () => {
             {(authModalType === 'signup' || authModalType === 'signin') && (
               <motion.div
                 initial={{ opacity: 0, scale: 0.5, y: -20 }}
-                animate={{ 
-                  opacity: 1, 
-                  scale: 1, 
-                  y: [-10, -30, -10] 
+                animate={{
+                  opacity: 1,
+                  scale: 1,
+                  y: [-10, -30, -10]
                 }}
                 exit={{ opacity: 0, scale: 0.5 }}
-                transition={{ 
+                transition={{
                   y: { repeat: Infinity, duration: 2, ease: "easeInOut" },
                   opacity: { duration: 0.5 },
                   scale: { duration: 0.5 }
